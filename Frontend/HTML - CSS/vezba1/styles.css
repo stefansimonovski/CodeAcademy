@@ -1,0 +1,64 @@
+.main{
+  display: flex;
+  flex-direction: row;
+}
+.one{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: space-between;
+}
+.two{
+  width: 500px;
+  height: 300px;
+  overflow: scroll;
+  display: block;
+}
+img{
+  height: 70px;
+  width: 70px;
+}
+.input2{
+  width:50%;
+  border-radius: 5px;
+}
+select{
+  width: 50%;
+  border-radius: 5px;
+  margin-top:30px;
+}
+.input1{
+  width: 30px;
+  border-radius: 5px;
+}
+
+ul{
+list-style-type: none;
+}
+li{
+  padding: 10px 10px;
+  margin: 10px 10px;
+}
+td, tr{
+  padding: 10px 10px;
+  margin: 10px 10px;
+  border-bottom: 1px solid black;
+}
+table{
+  border-spacing: 0;
+  max-width: 980px;
+  margin: auto;
+}
+
+tbody tr:hover {
+ background-color: gray;
+}
+button{
+  background-color: lightgray;
+  padding: 5px 10px;
+}
+thead th {
+  position: sticky;
+  top: 0;
+}
+

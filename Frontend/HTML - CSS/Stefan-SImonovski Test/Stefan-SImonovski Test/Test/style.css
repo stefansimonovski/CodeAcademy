@@ -1,0 +1,278 @@
+body{
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+    font-family: Oswald sans-serif;
+}
+header{
+    width: 100%;
+    box-shadow: 0 0 6px 0 rgba(103,109,112,.2);
+    position: fixed;
+    height: 40px;
+    padding: 20px 0 20px;
+    top:0;
+    background-color: white;
+}
+.headerwrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+header .headerwrap>div{
+    display: flex;
+    align-items: center;
+}
+header .headerwrap>div ul{
+    display: flex;
+    align-items: center;
+}
+header .headerwrap>div ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header .headerwrap div a{
+    text-decoration: none;
+    color: #333;
+}
+header .headerwrap div:first-child ul li .active{
+    color:#ce3494;
+}
+header .headerwrap div:first-child ul li a:hover{
+    color:#ff3366;
+    transition: 0.3s ease-in;
+    
+}
+header .headerwrap div:last-child a{
+    color:#ce3494;
+}
+header .headerwrap div:last-child a:hover{
+    color:#ff3366;
+    transform: scale(1.5);
+    transition: 0.3s ease-in;
+}
+header .headerwrap div a>img{
+    height: 100%;
+    width: auto;
+    margin-right: 10px;
+}
+header .headerwrap div ul li{
+    margin: 0 5px 0 5px;
+}
+header .headerwrap div ul li a{
+    font-family: 'Oswald', sans-serif;
+}
+header .headerwrap div ul li:first-child{
+    margin-left: 0;
+}
+header.headerwrap div ul li:last-child{
+    margin-right: 0;
+}
+header .headerwrap div ul li:nth-child(2) a::after{
+    content: "\61";
+    font-family: "icons-font";
+    font-size: 9px;
+    margin-left: 5px;
+}
+header .headerwrap div ul .withdropdown a:hover::after{
+    transform: rotate(180deg) translateY(5px);
+    color:#ff3366;
+    transition: 0.3s ease-in;
+    display: inline-block;
+}
+header .headerwrap div ul .withdropdown:hover .dropdown{
+    visibility: visible;
+    opacity: 1;
+}
+ header .headerwrap div ul li .dropdown{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    padding-top:30px;
+    padding-left: 110px;
+    left:0;
+    right: 0;
+}
+header .headerwrap div ul li .dropdown div{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+header .headerwrap div ul li .dropdown div span{
+    width:calc(100%/3 - 200px);
+}
+header .headerwrap div ul li .dropdown div span h3{
+    font-family: 'Oswald', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+header .headerwrap div ul li .dropdown div span p{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    color: #808080;
+    text-align: justify;
+    padding: 0 0 50px 0;
+    margin: 0;
+}
+header .headerwrap div ul li .dropdown div span:nth-child(n+2){
+    padding-left: 50px;
+}
+.bodywrap{
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 20px;
+    margin: auto;
+    margin-top: 100px;
+    
+}
+.bodywrap div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px, rgba(0, 0, 0, 0.2) 0px 0px 1px;
+    width: 100%;
+    height: 150px;
+    background-color: white;
+}
+.bodywrap div img{
+    height: 90%;
+}
+.bodywrap div span{
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+}
+.bodywrap div:nth-child(1){
+    grid-column: 1;
+    grid-row: 3/5;
+}
+.bodywrap div:nth-child(2){
+    grid-column: 2;
+    grid-row: 2/4;
+}
+.bodywrap div:nth-child(3){
+    grid-column: 2;
+    grid-row: 4/6;
+}
+.bodywrap div:nth-child(4){
+    grid-column: 3;
+    grid-row: 1/3;
+}
+.bodywrap div:nth-child(5){
+    grid-column: 3;
+    grid-row: 3/5;
+}
+.bodywrap div:nth-child(6){
+    grid-column: 3;
+    grid-row: 5/7;
+}
+.bodywrap div:nth-child(7){
+    grid-column: 4;
+    grid-row: 2/4;
+}
+.bodywrap div:nth-child(8){
+    grid-column: 4;
+    grid-row: 4/6;
+}
+.bodywrap div:nth-child(9){
+    grid-column: 5;
+    grid-row: 3/5;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    
+    header .headerwrap div ul li .dropdown div span{
+        width: 20%;
+    }
+    .bodywrap{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .bodywrap div:nth-child(1){
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .bodywrap div:nth-child(2){
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .bodywrap div:nth-child(3){
+        grid-column: 3;
+        grid-row: 1;
+    }
+    .bodywrap div:nth-child(4){
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .bodywrap div:nth-child(5){
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .bodywrap div:nth-child(6){
+        grid-column: 3;
+        grid-row: 2;
+    }
+    .bodywrap div:nth-child(7){
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .bodywrap div:nth-child(8){
+        grid-column: 2;
+        grid-row: 3;
+    }
+    .bodywrap div:nth-child(9){
+        grid-column: 3;
+        grid-row: 3;
+    }
+
+}
+
+@font-face {
+    font-family: "icons-font";
+    src:url("icons-font.eot");
+    src:url("icons-font.eot?#iefix") format("embedded-opentype"),
+      url("icons-font.woff") format("woff"),
+      url("icons-font.ttf") format("truetype"),
+      url("icons-font.svg#icons-font") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+  
+[data-icon]:before {
+    font-family: "icons-font" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: "icons-font" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.icon-arrow:before {
+    content: "\61";
+}
