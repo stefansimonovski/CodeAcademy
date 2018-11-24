@@ -1,3 +1,1 @@
 # CodeAcademy
-
-bla bla
