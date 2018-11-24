@@ -12,7 +12,7 @@
 // sobirajBrojki();
 
 
-function ompareDigitsc(num1, num2) {
+function compareDigitsc(num1, num2) {
 
     var digit1 = 0;
     var digit2 = 0;
