@@ -12,13 +12,13 @@
 // sobirajBrojki();
 
 
-function compareDigits(num1, num2) {
+function ompareDigitsc(num1, num2) {
 
     var digit1 = 0;
     var digit2 = 0;
     var indicator;
 
-    while (num1 && num2) {                             //ako edniot e pogolem ke prekine kaj krajot na pomaliot, zatoa se dvata
+    while (num1 && num2) {
 
         digit1 = num1 % 10;
         num1 = Math.floor(num1 / 10);
@@ -35,14 +35,14 @@ function compareDigits(num1, num2) {
         else { indicator = false; }
 
     }
-    // console.log("The comparison is " + indicator);   //pokazuva kolku true ima pred false, moze da se vidi kolku broevi prosle
+    
     return indicator;
 }
 
 
 function differentNext(n, x) {
 
-    var pom1 = n + 1;                                   // so n++ go zgolemuva "n" opsto, a go koristam i vo konsole log dole, vaka so +1 ne go zgolemuva.
+    var pom1 = n + 1;                                  
     var pom2 = x;
     
     while (true) {
