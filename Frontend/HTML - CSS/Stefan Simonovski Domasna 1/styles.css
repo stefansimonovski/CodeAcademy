@@ -1,0 +1,226 @@
+.bodywrap{
+    display:flex;
+    flex-direction: column;
+    max-width: 1100px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+
+}
+header{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 45px;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    width: 1100px;
+    top:0;
+}
+header .logo{
+    height: 40px;
+    width: auto;
+}
+header .menu{
+    list-style-type: none;
+    max-width: calc(100%-330px);
+    height: 100%;
+}
+header .menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+header .menu ul li{
+    padding: 0px;
+    font-family: 'Oswald', sans-serif;
+    color: #2d2d2d;
+}
+header .menu > ul > li:nth-of-type(-n+3)::after{
+    content: "•";
+    padding: 0 10px;
+}
+
+header .menu1{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+}
+header .menu1 .lupa{
+    height: 25px;
+    width: auto;
+    display: flex;
+    padding-left: 10px;
+}
+
+header .menu1 .hover .search-wrap{
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+    border-radius: 1px;
+    border:1px solid #eaeef1;
+    position: absolute;
+    right: 35px;
+    width: 250px;
+    display: none;
+    top: 0;
+}
+header .menu1 .hover:hover .search-wrap{
+    display: block;
+}
+header .menu1 .hover .search-wrap .baraj{
+    width: 100%;
+}
+header .menu1 .menu ul li a{
+    text-decoration: none;
+    color:#2d2d2d;
+    padding-bottom: 10px;
+}
+header .menu1 .menu ul li.active a{
+    color:#1097cc;
+}
+header .menu1 .menu ul .dropdown{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 120px;
+    height: auto;
+    margin-top:10px;
+    padding:10px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+    border-radius: 1px;
+    border:1px solid #eaeef1;
+    align-items: flex-start;
+}
+header .menu1 .menu ul .has-dropdown .dropdown li{
+    height: 100%;
+}
+header .menu1 .menu ul .has-dropdown:hover .dropdown {
+    display: flex;
+}
+.slider{
+    margin: 50px 0 20px;
+    display: flex;
+}
+.slider img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover; 
+    object-position: bottom;
+}
+.slider a{
+    display: flex;
+    justify-content: center;
+}
+.widget{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.widget .part{
+    width: calc(100%/2 - 10px);
+    overflow: hidden;  
+    position: relative;
+}
+.content-wrap{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 0 20px 0 140px;
+}
+.logo-wrap{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 1px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+    border: 1px solid #eaeef1;
+}
+.logo-wrap img{
+    width: 90%;
+    height: auto;
+}
+.content-wrap .text {
+    border:none;
+    box-shadow: none;
+}
+.part a{
+    text-decoration: none;
+}
+.slider .slidertxt{
+    position: absolute;
+    justify-content: center;
+    font-size: 26px;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    align-self: center;
+}
+.text {
+    color: #2d2d2d;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+    border-radius: 1px;
+    border: 1px solid #eaeef1;
+    padding: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+}
+h1{
+    text-align: center;
+    font-size:26px;
+}
+.down{
+    margin-top: 30px;
+}
+.down ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+.down ul li{
+    width: calc(100%/4 - 10px);
+    display: flex;
+    height: 80px;
+    background: #f6f6f6;
+    border-radius: 3px;
+    color: #4b4b4b;
+    margin-bottom:10px;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+    border: 1px solid rgba(75,75,75,.10)
+}
+.down ul li .list-item{
+    display: flex;
+    justify-content: center;
+    min-width: 100px;
+}
+.down ul li img{
+    height: 50px;
+    width: auto;
+    align-self: center;
+}
+.down ul li .list-content{
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #e8e9e9;
+    align-self: center;
+    padding: 0 10px;
+}
+.down ul li .list-content .nas{
+    color:#1097cc;
+    font-weight: bold;
+}
