@@ -1,0 +1,99 @@
+body{
+  background-color: 	#EEEEEE;
+}
+.h1, .reg{
+  color: #263751;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 10px;
+  box-sizing:border-box;
+  align-items:stretch;
+  }
+.register, .login{
+  width: 100%;
+  padding: 20px 20px;
+  margin: 5px 5px;
+}
+.login {
+  background-color: #234465;
+  color: white;
+}
+.button2{
+  cursor: pointer;
+  border: 2px solid 	#c97a2c;
+  color: white;
+  font-size: 16px;
+  padding: 5px 40px;
+  text-align: center;
+  background-color: #234465;
+  opacity: 0.6;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+.button2:hover {
+  opacity: 1;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+a{
+  color: white;
+}
+input[type=text], input[type=password], input[type=email]   {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 5px 5px;
+    box-sizing:border-box;
+    border-radius: 10px;
+  }
+  input[type=checkbox], label[for=remember]{
+    margin: 10px 0px;
+    cursor: pointer;
+
+  }
+.container2 {
+  display: flex;
+  flex-direction: column;
+  float:right;
+  align-items: flex-end;
+  }
+  .maincontainer{
+    margin: 30px 30px;
+  }
+  .button {
+    border: 2px solid #234465;
+    font-size: 16px;
+    padding: 5px 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px 0px;
+    background-color: #EEEEEE;
+    float: right;
+    color: #263751;
+  }
+  .button .btn{
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .button .btn:after{
+    content: '\00bb';
+    right: -5px;
+    transition: 0.5s;
+    opacity: 0;
+    right: 0;
+  }
+  .button:hover .btn{
+    padding-right: 5px;
+  }
+  .button:hover .btn:after{
+    opacity: 1;
+  }
+  @media screen and (max-width: 500px) {
+    .container {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  }

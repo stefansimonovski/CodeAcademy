@@ -1,0 +1,353 @@
+
+body{
+    background-color: rgb(233, 233, 233);
+    margin: 0;
+}
+.logo{
+    height: 40px;
+}
+.logoimg{
+    height: 100%;
+}
+.navigation{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Spicy Rice', cursive;
+}
+.navigation div{
+    height: 100%;
+}
+nav{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+nav div{
+    display: flex;
+    align-items: center;
+}
+nav div a {
+    margin-right: 40px;
+    text-decoration: none;
+    color:black;
+    text-transform: uppercase;
+}
+.search::after{
+    background-image: url(img/lupa.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    display: inline-block;
+    width: 25px; 
+    height: 25px;
+    content:"";
+}
+.search input{
+    margin:0;
+    padding: 0;
+    font-family: 'Spicy Rice', cursive;
+}
+.has-dropdown::after{
+    content: "";
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #00BCD4;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.bodywrap{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bodywrap span sub {
+    font-family: 'Patrick Hand', cursive;
+}
+.bodywrap span sub::before{
+    content: "ⓘ ";
+}
+.slider{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.slider-img{
+    position: relative;
+    width: 100%;
+}
+.under-slider{
+    display: flex;
+    align-content: center;
+    height: 100px;
+    margin-left: -50%;
+}
+.under-slider .logoimg{
+    background-color: white;
+    margin-top: -50px;
+    margin-left: 50px;
+    position: relative;
+}
+.under-slider span {
+    margin-left: 50px;
+    font-size: 24px;
+    margin-top: 15px;
+    width: auto;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.slider::before{
+    content: url(img/arrow-left.png);
+    position: absolute;
+    align-self: center;
+    left: 50px;
+}
+.slider::after{
+    content: url(img/arrow-right.png);
+    position: absolute;
+    align-self: center;
+    right: 50px;
+}
+.dots{
+    display: flex;
+    margin-bottom:-1px;
+    
+}
+.dots div{
+    border-radius: 50%;
+    background-color: gray;
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+}
+.cupons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+.cupons h2{
+    font-family: 'Spicy Rice', cursive;
+}
+.logos {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+.logos div{
+    background-color: white;
+}
+.logos span{
+   text-align: center;
+   font-family: 'Patrick Hand', cursive;
+}
+.best-deals{
+    margin-top: 50px;
+}
+.best-deals h2{
+    text-align: center;
+    font-family: 'Spicy Rice', cursive;
+}
+.best-deals div{
+    display: flex;
+    justify-content: space-between;
+}
+.best-deals div p{
+    margin: 0;
+    padding: 0;
+    width: calc(100%/2 - 20px);
+    font-family: 'Patrick Hand', cursive;
+}
+.best-deals div p:first-child{
+    border-right: 2px solid gray;
+    padding-right: 15px;
+}
+.best-coupons h2{
+    text-align: center;
+    margin: 0;
+    margin-top: 50px;
+    font-family: 'Spicy Rice', cursive;
+}
+.best-coupons h4{
+    text-align: center;
+    margin: 0;
+    font-family: 'Spicy Rice', cursive;
+}
+.best-coupons ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows:repeat(3, 1fr);
+    grid-gap: 40px;
+}
+.best-coupons ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px 2px #888888;
+    background-color: white;
+    padding: 0 10px;
+    margin: 0;
+}
+.best-coupons ul li .list-content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-family: 'Patrick Hand', cursive;
+}
+.best-coupons ul li .list-content span:first-child{
+    font-size:20px;
+}
+.best-coupons ul li .list-content span:last-child{
+    margin-top: 20px;
+}
+.best-coupons ul li .list-content span a{
+    text-decoration: none;
+    color: blue;
+    font-size: 14px;
+}
+.browse{
+    margin-top:50px;
+    width: 100%;
+}
+.browse h2{
+    text-align: center;
+    font-family: 'Spicy Rice', cursive;
+}
+.browse .btns{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.browse .btns button{
+    padding: 5px 30px;
+    background-color: white;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 18px;
+}
+.browse .btns button:hover{
+    background-color: lightsteelblue;
+    border-color: lightsteelblue;
+}
+.browse .deals ul{
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.browse .deals ul li{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    box-shadow: 2px 2px 2px 2px #888888;
+    background-color: white;
+    padding: 0 10px;
+    margin: 20px 0;
+    font-family: 'Patrick Hand', cursive;
+}
+.browse .deals ul li .list-img{
+    grid-column: 1;
+    justify-self: center;
+}
+.browse .deals ul li .list-main{
+    grid-column: 2/5;
+    display: flex;
+    flex-direction: column;
+}
+.browse .deals ul li .list-main span{
+    margin-top:20px;
+}
+.browse .deals ul li .list-main span:first-child{
+    color: blue;
+}
+.browse .deals ul li .list-main sub{
+    margin-top: 20px;
+    color:darkgray;
+    margin-bottom: 20px;
+}
+.browse .deals ul li .list-main sub::before{
+    background-image: url(img/briefcase.svg);
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 10px; 
+    height: 10px;
+    content: "";
+    margin-right: 5px;
+}
+.browse .deals ul li .btn{
+    grid-column: 5;
+    justify-self: center;
+}
+.browse .deals ul li .btn button{
+    padding: 5px 50px;
+    background-color: white;
+    box-shadow: none;
+    border: 1px solid black;
+    font-family: 'Spicy Rice', cursive;
+}
+.browse .deals ul li .btn button:hover{
+    background-color: black;
+    color:white;
+}
+.footer{
+    width: 100%;
+    background-color: white;
+    height: 100px;
+    position: relative;
+}
+.footer footer{
+    width:80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.footer footer sub{
+    font-family: 'Patrick Hand', cursive;
+}
+.footer footer sub::before{
+    content:"ⓘ ";
+}
+.footer footer div{
+    margin-top:30px;
+    margin-bottom: 50px;
+
+}
+.footer footer div a{
+    text-decoration: none;
+    color:black;
+    font-size: 20px;
+    margin-right: 20px;
+    font-family: 'Spicy Rice', cursive;
+}
+.footer button{
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    background-color: white;
+    border-left: 3px solid rgba(119, 118, 118, 0.2);
+    border-top: 3px solid rgba(119, 118, 118, 0.2);
+    border-right: 3px solid rgba(119, 118, 118, 0.2);
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px 15px;
+}
+
