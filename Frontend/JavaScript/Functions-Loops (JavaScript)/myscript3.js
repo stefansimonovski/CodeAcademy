@@ -102,3 +102,5 @@ function isPrime(index1) {
 	}
 }
 rangeIntegers(1, 11)
+
+// Samo da vidam dali raboti
