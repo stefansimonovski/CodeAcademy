@@ -1,15 +1,15 @@
-// function sobirajBrojki(){
-//     var vrednost = prompt("Vnesi broj");
-//     var zbir = 0;
+function sobirajBrojki(){
+    var vrednost = prompt("Vnesi broj");
+    var zbir = 0;
 
-//     while (vrednost) {
-//         zbir += vrednost % 10;
-//         vrednost = Math.floor(vrednost / 10);
-//     }
-//     alert(zbir);
+    while (vrednost) {
+        zbir += vrednost % 10;
+        vrednost = Math.floor(vrednost / 10);
+    }
+    alert(zbir);
 
-// }
-// sobirajBrojki();
+}
+sobirajBrojki();
 
 
 function compareDigits(num1, num2) {
