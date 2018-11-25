@@ -73,32 +73,27 @@
 
 
 function rangeIntegers(x, y){
-	var sumofone = 0;
+	var sumofprime = 0;
+	var sumofnotprime = 0;
 	for (var index = x; index < y; index++) {
-		if (sumofone != isPrime(index)) {
-			sumofone += index;
-		}else if(sumofone == isPrime(index)){
-
+		if(index == isPrime(index)){
+			sumofprime += index;
+		}else{
+			sumofnotprime += index;
 		}
 	}
-	console.log(sumofone);
+	console.log(sumofprime + " Sum of Prime numbers between " + x + "-" + y);
+	console.log(sumofnotprime + " Sum of not Prime numbers between " + x + "-" + y);
 }
-function isPrime(index1) {
-	if (index1 === 2) {
-	  return true;
+function isPrime(index) {
+    for(var i = 2; i < index; i++) {
+        if(index % i === 0) {
+			console.log(index + " Is not a Prime Number");
+			return index;
+        }
 	}
-	else if(index1 > 0){
-	    for (var i = 2;  i < index1; i++) {
-  		    if (index1 % i !== 0 ) {
-		    	return true;
-		    }else if (index1 === i * i) {
-		    	return false
-		    }else {
-		  		return false;
-			}
-	  	}
-	}else{
-	  return false;
-	}
+	console.log(index + " Is a Prime Number");
+	return false;
 }
-rangeIntegers(1, 11)
+rangeIntegers(2, 72);
+
