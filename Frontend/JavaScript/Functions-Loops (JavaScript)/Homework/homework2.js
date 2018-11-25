@@ -32,7 +32,9 @@ function compareDigits(num1, num2) {
             break;
         }
 
-        else { indicator = false; }
+        else { 
+            indicator = false;
+         }
 
     }
     
@@ -53,11 +55,13 @@ function differentNext(n, x) {
          
         }
 
-        else { break; }
+        else {
+             break;
+        }
     }
 
     console.log("Najbliskiot pogolem broj od " + n + " koj e celosno razlicen od brojot " + x + " e brojot " + pom1);
 
 }
 
-differentNext(350,390);
+differentNext(450,490);
