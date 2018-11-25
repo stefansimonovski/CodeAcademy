@@ -44,7 +44,6 @@ function checkIfArmstrong(index){
 		 	result += Math.pow(digit, 3);
 		}
 	return index == result;
-	
 }
 
 myfunction3();
