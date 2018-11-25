@@ -8,21 +8,22 @@ function converter (temperature, type) {
         result = "the value cant be converted"
     }
     console.log("we are done");
+    console.log(result);
     return result;
     }
 
-converter();
+converter(35, "C");
 
 
 function calculate (classes, sessions, months, numberofBreakMonths, breakMonSessions){
     var result;
     var totalsesion;
     totalsesion = classes * sessions;
-    result = (totalsesion * months) - (numberofBreakMonths * (totalsesion - breakMonSessions) * totalsesion);
+    result = (totalsesion * months) - (numberofBreakMonths * (totalsesion - breakMonSessions));
     console.log(result);
     return result;
 }
-calculate();
+calculate(3, 12, 6, 1, 6);
 
 function presmetka (items, price, type){
     var result = items * price;
@@ -38,10 +39,10 @@ function presmetka (items, price, type){
         result += result * 0.05;
         result += result * 0.18;
     }
-    console.log(result);
+    console.log(result + " - for "+ items + " - " + type + " with price of - " + price);
     return result;
 }
-presmetka();
+presmetka(30, 899.95, "IOS");
 
 
 
