@@ -2,9 +2,9 @@ function myfunction(){
 
 	for(var broj = 0; broj < 16; broj++){
 		if(broj % 2 == 0){
-			alert("Brojot " + broj " e paren");
+			console.log("Brojot " + broj + " e paren");
 		}else{
-			alert("Brojot " + broj " e neparen");
+			console.log("Brojot " + broj + " e neparen");
 		} 
 	}
 }
@@ -13,11 +13,11 @@ myfunction();
 function myfunction2(){
 	for(var broj = 1; broj < 101; broj++){
 		if(broj % 3 == 0 && broj % 5 == 0){
-			console.log("FizzBuzz" + broj);
+			console.log("FizzBuzz " + broj);
 		}else if(broj % 5 == 0){
-			console.log("Buzz" + broj);
+			console.log("Buzz " + broj);
 		}else if(broj % 3 == 0){
-			console.log("Fizz" + broj);
+			console.log("Fizz " + broj);
 		}else{
 			console.log(broj);
 		}
