@@ -58,7 +58,7 @@
 
 //     for(var i = 1; i <= triesnum; i++){
 //         if(i % 10 === 0){
-//             girlpoints = girlpoints - 12;
+//             girlpoints -= 12;
 //         }else if(i % 5 === 0){
 //             girlpoints += 10;
 //         }else if(i % 3 === 0){
