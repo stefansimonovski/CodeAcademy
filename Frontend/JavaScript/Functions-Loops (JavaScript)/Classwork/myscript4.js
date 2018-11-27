@@ -33,25 +33,28 @@
 
 // paramedic();
 
-// function checkIfPalindrome(){
-//     var num1 = checkNumber(index);
-//     var num2 = 0;
-//         while(num1){
-//             num1 = index % 10;
-//             index = Math.floor(index / 10);
-//             num2 = num1 * 10 + num1;
-//             if(num2 == num1){
-//                 console.log("the number " + num1 + " is palindrome");
-//             }
-//         }
-// }
-// function checkNumber(index){
-//     for(var index = 1; index < 100; index++){
-//         return index;
-//     }    
-// }
+function checkIfPalindrome(){
+    for (var i = 100; i < 999; i++) {
+        if(compareDigits(i) == i){
+            console.log("this number is palindrome " + i);
+        }
+    }
+}
+function compareDigits(index){
+    var digit = 0;
+    var sum = 0;
+    while(index){
+        digit = index % 10;
+        index = Math.floor(index / 10);
+        if(digit >= 0){
+            sum = (sum * 10) + digit;
+        }else{
+            break;
+        }
+    }return sum;
+}
 
-// checkIfPalindrome();
+checkIfPalindrome();
 
 // function flirt(triesnum, boyhitpoint){
 //     var girlpoints = 0;
