@@ -33,28 +33,41 @@
 
 // paramedic();
 
-function checkIfPalindrome(){
-    for (var i = 100; i < 999; i++) {
-        if(compareDigits(i) == i){
-            console.log("this number is palindrome " + i);
+// function checkIfPalindrome(){
+//     for (var i = 100; i < 999; i++) {
+//         if(compareDigits(i) == i){
+//             console.log("this number is palindrome " + i);
+//         }
+//     }
+// }
+// function compareDigits(index){
+//     var digit = 0;
+//     var sum = 0;
+//     while(index){
+//         digit = index % 10;
+//         index = Math.floor(index / 10);
+//         if(digit >= 0){
+//             sum = (sum * 10) + digit;
+//         }else{
+//             break;
+//         }
+//     }return sum;
+// }
+
+// checkIfPalindrome();
+
+function howMuchFuel(){
+    var uses = 7 / 100;
+    var drive = 0;
+    for (var index = 1; index <= 100; index++) {
+        if(index == 43){
+            drive = index * uses;
+            console.log("Kolata potrosi " + drive + " litri pri pominati " + index + " kilometri");
         }
     }
-}
-function compareDigits(index){
-    var digit = 0;
-    var sum = 0;
-    while(index){
-        digit = index % 10;
-        index = Math.floor(index / 10);
-        if(digit >= 0){
-            sum = (sum * 10) + digit;
-        }else{
-            break;
-        }
-    }return sum;
-}
+}   
 
-checkIfPalindrome();
+howMuchFuel();
 
 // function flirt(triesnum, boyhitpoint){
 //     var girlpoints = 0;
