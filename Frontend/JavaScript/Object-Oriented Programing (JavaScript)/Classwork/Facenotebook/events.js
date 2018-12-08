@@ -7,8 +7,6 @@ function Event(name){
         if(answer == true){
             this.usersJoined.push(target);
             target.isJoinedtoEvent.push(event);
-        }else{
-           
         }
     }
 }
