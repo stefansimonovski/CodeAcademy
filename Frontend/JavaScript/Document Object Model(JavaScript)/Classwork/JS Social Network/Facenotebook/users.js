@@ -3,7 +3,20 @@ function User(name){
     this.pictures = [];
     this.album = function(){
         for (let index = 0; index < 10; index++) {
-            this.pictures.push(new Picture(index));
+            switch(getRandom(1, 4)){
+                case 1:
+                    this.pictures.push(new PictureOne(index));
+                    break;
+                case 2:
+                    this.pictures.push(new PictureTwo(index));
+                    break;
+                case 3:
+                    this.pictures.push(new PictureThree(index));
+                    break;
+                case 4:
+                    this.pictures.push(new PictureFour(index));
+                    break;
+            }
         }
         this.profilepicture.push(new Profilepicture())
     }
