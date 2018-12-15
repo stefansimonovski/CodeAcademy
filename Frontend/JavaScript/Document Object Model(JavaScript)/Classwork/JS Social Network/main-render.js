@@ -67,37 +67,56 @@ function PageRenderer(data) {
                     var newDiv = document.createElement("div");
                     newDiv.id = "popUpDiv";
                     newDiv.style.src = "popUp-pic-css.css";
+
+                    var sliderleft = document.createElement("span");
+                    sliderleft.innerHTML = "<";
+                    sliderleft.style.fontSize = "100px";
+                    sliderleft.style.position = "absolute";
+                    sliderleft.style.top = "25%";
+                    sliderleft.style.left = "-5%";
+
+                    newDiv.appendChild(sliderleft);
+
+                    var imgSlide = parseInt(event.target.id);
+                    sliderleft.addEventListener("click", function(){
+                        newImage.id = imgSlide;
+                        if(imgSlide == 0){
+                            imgSlide = 9;
+                        }else if(imgSlide <= 9){
+                            imgSlide--;
+                        }
+                        console.log(imgSlide);
+                    })
+
                     var newImage = document.createElement("img");
                     newImage.src = that.userData.pictures[event.target.id].url;
-                    console.log(event.target.id, that.userData.pictures[event.target.id].url)
+                    newImage.id = that.userData.pictures[event.target.id].id;
+                    console.log("Picture id =", event.target.id)
                     newDiv.appendChild(newImage);
                     rightContainer.appendChild(newDiv);
                     
-                    var slider1 = document.createElement("span");
-                    slider1.innerHTML = "<";
-                    slider1.style.fontSize = "100px";
-                    slider1.style.position = "absolute";
-                    slider1.style.top = "50%";
-                    slider1.style.left = "-5%";
-                    var slider2 = document.createElement("span");
                     
-                    slider2.innerHTML = ">";
-                    slider2.style.fontSize = "100px";
-                    slider2.style.position = "absolute";
-                    slider2.style.top = "50%";
-                    slider2.style.right = "12%";
-                    
-                    slider1.addEventListener("click", function(){
 
-                    })
+                    var slideright = document.createElement("span");
+                    slideright.innerHTML = ">";
+                    slideright.style.fontSize = "100px";
+                    slideright.style.position = "absolute";
+                    slideright.style.top = "25%";
+                    slideright.style.right = "12%";
 
-                    slider2.addEventListener("click", function(){
-                        
+                    slideright.addEventListener("click", function(){
+                        newImage.id = imgSlide;
+                        if(imgSlide == 9){
+                            imgSlide = 0;
+                        }else if(imgSlide >= 0){
+                            imgSlide++;
+                        }
+                        console.log(imgSlide);
                     })
 
 
-                    newDiv.appendChild(slider1);
-                    newDiv.appendChild(slider2);
+                    
+                    newDiv.appendChild(slideright);
                 })
             }
         }
@@ -110,8 +129,10 @@ function PageRenderer(data) {
 
 
         this.stories = function(){
-            for(var i = 0; i < 3; i++){
+            for(var i = 0; i < this.userData.stories.length; i++){
+
                 var story = document.createElement("span");
+                story.id = i;
 
                 var aboutstory = document.createElement("h2");
                 aboutstory.innerHTML = this.userData.stories[i].title;
@@ -124,9 +145,21 @@ function PageRenderer(data) {
                 var storydate = document.createElement("p");
                 storydate.innerHTML = this.userData.stories[i].date;
                 story.appendChild(storydate);
+                
+                var button = document.createElement("button");
+                button.innerHTML = "Delete Story";
+                var that = this;
+                button.addEventListener("click", function(event){
+                    event.target.parentNode.style.display = "none";
+                    delete that.userData.stories[event.target.parentNode.id];
+                    console.log(that.userData.stories);
+                })
 
+                story.appendChild(button);
                 storiesContainer.appendChild(story);
             }
+            
+            
         }
         this.stories();
 

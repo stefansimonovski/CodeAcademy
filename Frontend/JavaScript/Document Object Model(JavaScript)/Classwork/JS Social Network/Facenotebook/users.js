@@ -13,7 +13,7 @@ function User(name){
     this.stories = [];
     this.generateStory = function(){
         for (let index = 0; index < 5; index++) {
-            this.stories.push(new Story());
+            this.stories.push(new Story(index));
         }
         this.stories.sort(function(a, b){
             return new Date(a.date).getTime() > new Date(b.date).getTime()
