@@ -78,6 +78,8 @@ function PageRenderer(data) {
                     newDiv.appendChild(sliderleft);
 
                     var imgSlide = parseInt(event.target.id);
+
+                    
                     sliderleft.addEventListener("click", function(){
                         newImage.id = imgSlide;
                         if(imgSlide == 0){
