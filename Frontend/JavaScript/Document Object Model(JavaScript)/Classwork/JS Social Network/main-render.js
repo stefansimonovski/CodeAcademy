@@ -88,7 +88,11 @@ function PageRenderer(data) {
                     slider2.style.right = "12%";
                     
                     slider1.addEventListener("click", function(){
-                                   
+
+                    })
+
+                    slider2.addEventListener("click", function(){
+                        
                     })
 
 
