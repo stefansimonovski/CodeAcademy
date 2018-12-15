@@ -56,6 +56,7 @@ function PageRenderer(data) {
             for(var i = 0; i < this.userData.pictures.length; i++){
                 var picture = document.createElement("img");
                 picture.className = "slide-pictures";
+                picture.style.cursor = "pointer";
                 picture.style.width = "calc(20% - 10px)";
                 picture.style.height = "calc(50% - 10px)";
                 
@@ -71,6 +72,7 @@ function PageRenderer(data) {
                     var sliderleft = document.createElement("span");
                     sliderleft.innerHTML = "<";
                     sliderleft.style.fontSize = "100px";
+                    sliderleft.style.cursor = "pointer";
                     sliderleft.style.position = "absolute";
                     sliderleft.style.top = "25%";
                     sliderleft.style.left = "-5%";
@@ -79,9 +81,10 @@ function PageRenderer(data) {
 
                     var imgSlide = parseInt(event.target.id);
 
-                    
+
                     sliderleft.addEventListener("click", function(){
                         newImage.id = imgSlide;
+                        newImage.src = that.userData.pictures[imgSlide].url;
                         if(imgSlide == 0){
                             imgSlide = 9;
                         }else if(imgSlide <= 9){
@@ -101,6 +104,7 @@ function PageRenderer(data) {
 
                     var slideright = document.createElement("span");
                     slideright.innerHTML = ">";
+                    slideright.style.cursor = "pointer";
                     slideright.style.fontSize = "100px";
                     slideright.style.position = "absolute";
                     slideright.style.top = "25%";
@@ -108,6 +112,7 @@ function PageRenderer(data) {
 
                     slideright.addEventListener("click", function(){
                         newImage.id = imgSlide;
+                        newImage.src = that.userData.pictures[imgSlide].url;
                         if(imgSlide == 9){
                             imgSlide = 0;
                         }else if(imgSlide >= 0){
@@ -116,6 +121,21 @@ function PageRenderer(data) {
                         console.log(imgSlide);
                     })
 
+                    var exit = document.createElement("span");
+                    
+                    exit.innerHTML = " X ";
+                    exit.style.backgroundColor = "white";
+                    exit.style.cursor = "pointer";
+                    exit.style.fontSize = "20px";
+                    exit.style.position = "absolute";
+                    exit.style.top = "0px";
+                    exit.style.right = "170px";
+
+                    exit.addEventListener("click", function(){
+                        newDiv.parentNode.removeChild(newDiv);
+                    })
+
+                    newDiv.appendChild(exit);
 
                     
                     newDiv.appendChild(slideright);
@@ -127,7 +147,7 @@ function PageRenderer(data) {
 
         this.pictures();
         
-        var storiesContainer = document.createElement("span");
+        var storiesContainer = document.createElement("div");
 
 
         this.stories = function(){
@@ -150,9 +170,10 @@ function PageRenderer(data) {
                 
                 var button = document.createElement("button");
                 button.innerHTML = "Delete Story";
+                button.style.cursor = "pointer";
                 var that = this;
                 button.addEventListener("click", function(event){
-                    event.target.parentNode.style.display = "none";
+                    storiesContainer.removeChild(this.parentNode);
                     delete that.userData.stories[event.target.parentNode.id];
                     console.log(that.userData.stories);
                 })
