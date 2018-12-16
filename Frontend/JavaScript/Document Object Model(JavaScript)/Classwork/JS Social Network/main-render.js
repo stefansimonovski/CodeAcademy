@@ -67,75 +67,106 @@ function PageRenderer(data) {
                 picture.addEventListener("click", function(event){
                     var newDiv = document.createElement("div");
                     newDiv.id = "popUpDiv";
-                    newDiv.style.src = "popUp-pic-css.css";
+                    newDiv.style.position = "absolute";
+                    newDiv.style.top = "5%";
+                    newDiv.style.left = "10%";
+                    newDiv.style.right = "10%";
+                    newDiv.style.width = "80%";
+                    newDiv.style.height = "700px";
+                    newDiv.style.backgroundColor = "white";
+                    
+                    
 
                     var sliderleft = document.createElement("span");
-                    sliderleft.innerHTML = "<";
-                    sliderleft.style.fontSize = "100px";
                     sliderleft.style.cursor = "pointer";
                     sliderleft.style.position = "absolute";
-                    sliderleft.style.top = "25%";
+                    sliderleft.style.top = "50%";
                     sliderleft.style.left = "-5%";
 
+                    var leftArrow = document.createElement("img");
+                    leftArrow.src = "img/left-arrow.png";
+                    leftArrow.style.height = "50px";
+                    leftArrow.style.width = "50px";
+
+
+                    sliderleft.appendChild(leftArrow);
                     newDiv.appendChild(sliderleft);
+
 
                     var imgSlide = parseInt(event.target.id);
 
 
                     sliderleft.addEventListener("click", function(){
                         newImage.id = imgSlide;
-                        newImage.src = that.userData.pictures[imgSlide].url;
-                        if(imgSlide == 0){
+                        
+                        if(imgSlide <= 0){
                             imgSlide = 9;
                         }else if(imgSlide <= 9){
                             imgSlide--;
                         }
+                        newImage.src = that.userData.pictures[imgSlide].url;
+                        
                         console.log(imgSlide);
                     })
 
                     var newImage = document.createElement("img");
                     newImage.src = that.userData.pictures[event.target.id].url;
                     newImage.id = that.userData.pictures[event.target.id].id;
-                    console.log("Picture id =", event.target.id)
+                    newImage.style.width = "100%";
+                    newImage.style.height = "100%";
+                    newImage.style.objectFit = "fill";
+
                     newDiv.appendChild(newImage);
                     rightContainer.appendChild(newDiv);
                     
                     
 
                     var slideright = document.createElement("span");
-                    slideright.innerHTML = ">";
                     slideright.style.cursor = "pointer";
-                    slideright.style.fontSize = "100px";
                     slideright.style.position = "absolute";
-                    slideright.style.top = "25%";
-                    slideright.style.right = "12%";
+                    slideright.style.top = "50%";
+                    slideright.style.right = "-5%";
 
+                    var arrowRight = document.createElement("img");
+                    arrowRight.src = "img/right-arrow.png";
+                    arrowRight.style.width = "50px";
+                    arrowRight.style.height = "50px";
+
+                    slideright.appendChild(arrowRight);
+                    
+                    
                     slideright.addEventListener("click", function(){
                         newImage.id = imgSlide;
-                        newImage.src = that.userData.pictures[imgSlide].url;
+                        
                         if(imgSlide == 9){
                             imgSlide = 0;
                         }else if(imgSlide >= 0){
                             imgSlide++;
                         }
+                        newImage.src = that.userData.pictures[imgSlide].url;
                         console.log(imgSlide);
                     })
 
                     var exit = document.createElement("span");
-                    
-                    exit.innerHTML = " X ";
-                    exit.style.backgroundColor = "white";
                     exit.style.cursor = "pointer";
-                    exit.style.fontSize = "20px";
                     exit.style.position = "absolute";
                     exit.style.top = "0px";
-                    exit.style.right = "170px";
+                    exit.style.right = "0px";
+
+                    var exitButton = document.createElement("img");
+                    exitButton.src = "img/close-button.png";
+                    exitButton.style.width = "30px";
+                    exitButton.style.height = "30px";
+
+                    exit.appendChild(exitButton);
+
+                    newDiv.appendChild(exit);
 
                     exit.addEventListener("click", function(){
                         newDiv.parentNode.removeChild(newDiv);
                     })
 
-                    newDiv.appendChild(exit);
+                    
 
                     
                     newDiv.appendChild(slideright);
