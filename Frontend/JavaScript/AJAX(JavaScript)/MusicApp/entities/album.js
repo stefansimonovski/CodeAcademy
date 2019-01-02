@@ -4,6 +4,6 @@ export function Album(params){
     this.playcount = params.playcount;
     this.tracks = params.tracks.track;
     this.picture = params.image;
-    this.published = params.wiki.published
-    this.summary = params.wiki.summary
+    // this.published = params.wiki.published
+    // this.summary = params.wiki.summary
 }
