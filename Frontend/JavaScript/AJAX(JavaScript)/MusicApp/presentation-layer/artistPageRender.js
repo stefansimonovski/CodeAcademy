@@ -4,11 +4,22 @@ import * as jquery from "/lib/jquery.js"
 export function RenderArtist() {
     this.artistPageData = new ArtistLogic();
     this.artistData = {};
+    this.newArtistData = {};
 
     this.renderAll = async function(hash) {
         this.artistData = await this.artistPageData.getArtistPageData(hash);
         var $mainContainer = $("#main-container").css("width", "80%").css("margin", "auto");
+        
         $mainContainer
+        .append($("<div>")
+            .attr("id", "search-bar")
+            .append($("<input>")
+            .attr("value", " ")
+            .attr("id", "search")
+            .attr("type", "text")
+            .css("width", "200px"))
+            .append($("<button>")
+            .html("Search")))
         .append($("<div>")
             .attr("id", "header")
             .css("display", "flex")
@@ -159,4 +170,50 @@ export function RenderArtist() {
         }
         return $albumContainer
     }
+    this.searchArtist = async function(){
+        this.delayedInput = null;
+        this.newArtistData = await this.artistPageData.searchArtist(this.artistPageData.artistLetters.join("").toString());
+        console.log(this.newArtistData);
+        $("#search-bar")
+                .css("position", "relative")
+                .append($("<div>")
+                    .attr("id", "search-sugestion")
+                    .css("position", "absolute")
+                    .css("width", "200px")
+                    .css("height", "300px")
+                    .css("left", "0px")
+                    .css("top", "20px")
+                    .css("background-color", "green"))
+
+        for(var i = 0; i < this.newArtistData.artist.length; i++){
+            var $searchSugestion = $("#search-sugestion")
+            
+                var $bla = $("<div>")
+                                .append($("<img>")
+                                .attr("src", this.newArtistData.artist[i].image[0]["#text"]))
+                                .append($("<span>")
+                                .html(this.newArtistData.artist[i].name))
+            $searchSugestion.append($bla)
+        }
+        
+    }
+    var that = this;
+    this.delayedInput = null
+    document.addEventListener("keypress", function(event){
+        if(event.code == "Enter"){
+            that.artistPageData.artistName = that.artistPageData.artistLetters.join("").toString()
+            console.log(that.artistPageData.artistName)
+            return
+        }
+        that.artistPageData.artistLetters.push(event.key)
+        console.log(that.artistPageData.artistLetters)
+        if(this.delayedInput != null){
+            clearTimeout(this.delayedInput);
+        }
+            this.delayedInput = setTimeout(function(){
+                that.searchArtist()
+                
+            }, 300)
+    })
+    
 }

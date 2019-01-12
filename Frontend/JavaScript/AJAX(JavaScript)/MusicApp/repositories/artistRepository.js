@@ -22,7 +22,16 @@ export function ArtistRepository() {
         } catch (error){
             return result;
         }
-        
+    }
+    this.searchArtist = async function (name){
+        var result = null;
+        try{
+            var response = await fetch("http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=" + name +  "&api_key=7aa71cb9c109a121032c506f18055880&format=json&limit=5");
+            result = response.json();
+            return result
+        } catch (error){
+            return result;
+        }
     }
     
 }
