@@ -179,22 +179,26 @@ export function RenderArtist() {
                 .append($("<div>")
                     .attr("id", "search-sugestion")
                     .css("position", "absolute")
-                    .css("width", "200px")
-                    .css("height", "300px")
+                    .css("width", "auto")
+                    .css("height", "auto")
                     .css("left", "0px")
                     .css("top", "20px")
-                    .css("background-color", "green"))
+                    .css("background-color", "white")
+                    .css("padding", "0px 20px 10px 20px")
+                    .css("box-shadow", "3px 3px 7px #777"))
 
         for(var i = 0; i < this.newArtistData.artist.length; i++){
             var $searchSugestion = $("#search-sugestion")
             
                 var $bla = $("<div>")
+                                .css("margin-top", "10px")
                                 .append($("<img>")
                                 .attr("src", this.newArtistData.artist[i].image[0]["#text"]))
                                 .append($("<span>")
                                 .html(this.newArtistData.artist[i].name))
             $searchSugestion.append($bla)
         }
+        this.artistPageData.artistLetters = [];
         
     }
     var that = this;
@@ -209,11 +213,13 @@ export function RenderArtist() {
         console.log(that.artistPageData.artistLetters)
         if(this.delayedInput != null){
             clearTimeout(this.delayedInput);
+            $("#search-bar div").remove();
+            
         }
-            this.delayedInput = setTimeout(function(){
-                that.searchArtist()
+        this.delayedInput = setTimeout(function(){
+            that.searchArtist()
                 
-            }, 300)
+        }, 300)
     })
     
 }

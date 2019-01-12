@@ -5,7 +5,6 @@ export function ArtistLogic() {
     this.artistRepo = new ArtistRepository();
     this.albumRepo = new AlbumRepository();
     this.artistLetters = [];
-    this.artistName = "";
     
     this.getArtistPageData = async function(hash) {
         var artist =  await this.artistRepo.getArtist(hash);
