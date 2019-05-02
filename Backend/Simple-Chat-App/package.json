@@ -1,0 +1,19 @@
+{
+  "name": "simple-chat-app",
+  "version": "1.0.0",
+  "description": "simple chat application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Stefan Simonovski",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "*"
+  },
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*"
+  }
+}
