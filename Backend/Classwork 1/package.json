@@ -1,0 +1,50 @@
+{
+  "name": "classwork-1",
+  "version": "0.0.1",
+  "description": "Backend Sample",
+  "main": "index.js",
+  "scripts": {
+    "dev":"nodemon src/index.js --exec babel-node --presets-env",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefansimonovski/CodeAcademy/Backend/Classwork1.git"
+  },
+  "author": "Stefan Simonovski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefansimonovski/CodeAcademy/Backend/Classwork1/issues"
+  },
+  "homepage": "https://github.com/stefansimonovski/CodeAcademy/Backend/Classwork1#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-flow-comments": "^6.22.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-flowtype": "^3.2.1",
+    "eslint-plugin-flowtype-errors": "^3.6.0",
+    "eslint-plugin-import": "^2.16.0",
+    "flow-bin": "^0.92.1",
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-unless": "^0.5.0",
+    "helmet": "^3.15.0",
+    "morgan": "^1.9.1"
+  }
+}
